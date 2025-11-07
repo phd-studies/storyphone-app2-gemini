@@ -9,3 +9,5 @@
 .idea/assetWizardSettings.xml
 build
 .DS_Store
+android-sdk/
+sdk-tools.zip
