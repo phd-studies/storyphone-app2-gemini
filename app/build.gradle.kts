@@ -1,7 +1,4 @@
 
-import java.util.Properties
-import java.io.FileInputStream
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -54,10 +51,10 @@ android {
     }
 }
 
-val localProperties = Properties()
+val localProperties = java.util.Properties()
 val localPropertiesFile = project.rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
-    localProperties.load(FileInputStream(localPropertiesFile))
+    localProperties.load(java.io.FileInputStream(localPropertiesFile))
 }
 
 android.defaultConfig.buildConfigField("String", "API_KEY", "\"${localProperties.getProperty("apiKey")}\"")
